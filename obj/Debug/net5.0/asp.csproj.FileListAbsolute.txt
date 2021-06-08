@@ -40,3 +40,4 @@ D:\c#\asp\obj\Debug\net5.0\asp.genruntimeconfig.cache
 D:\c#\asp\obj\Debug\net5.0\asp.csproj.CopyComplete
 D:\c#\asp\obj\Debug\net5.0\Razor\Views\Hello\Index.cshtml.g.cs
 D:\c#\asp\obj\Debug\net5.0\Razor\Views\Movies\Index.cshtml.g.cs
+D:\c#\asp\obj\Debug\net5.0\Razor\Views\Employee\Index.cshtml.g.cs
