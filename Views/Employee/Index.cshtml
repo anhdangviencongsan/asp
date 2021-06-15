@@ -1,15 +1,38 @@
-<html xmlns = "http://www.w3.org/1999/xhtml"> 
-   <head> 
-      <title>Home</title> 
-   </head> 
-   
-   <body> 
-      <h1>Welcome!</h1> 
-      
-      <div> 
-         @Model.Name 
-         @Model.ID
-      </div> 
-      
-   </body> 
-</html> 
+@model IEnumerable<Employee>
+@{
+   ViewData["Title"] = "Index Page";
+   IEnumerable<Employee> employees = Model;
+}
+
+
+<table  class="table">
+
+   <thead>
+      <tr>
+         <td scope="col">ID</td>
+         <td scope="col">Name</td>
+         <td scope="col">UserName</td>
+         <td scope="col">Password</td>
+      </tr>
+   </thead>
+
+   <tbody>
+     
+         @foreach (var item in employees)
+          
+         {
+            <tr>
+            <td scope="row">@item.ID</td>
+            <td scope="row">@item.Name</td>
+
+            <td scope="row">@item.UserName</td>
+            <td scope="row">@item.PassWord</td>
+               </tr>
+         }
+       
+
+
+
+      </tr>
+   </tbody>
+</table>

@@ -1,16 +1,20 @@
 using asp.Models;
+using asp.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace asp.Controllers
 {
     public class EmployeeController :Controller
     {
-        public ViewResult Index ()
+       private readonly IEmployeeService _employeeService ; 
+        public EmployeeController(IEmployeeService employeeService)
         {
-            var employee = new Employee {
-                ID = 1 , Name = "Van"
-            };
-            return View(employee);
+            _employeeService = employeeService ;
+        }
+        public ActionResult Index ()
+        {
+            var employees = _employeeService.GetAll();
+            return View(employees);
         }
 
         
