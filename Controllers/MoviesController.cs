@@ -1,22 +1,30 @@
+using System.Linq;
 using asp.Models;
+using Asp.Data;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace asp.Controllers
 {
-    public class MoviesController:Controller
+    public class MoviesController : Controller
     {
 
-        public ActionResult Index ()
+        public readonly DataContext _context;
+        public MoviesController(DataContext context)
         {
-            var movie = new Movie ()
+            _context = context;
+        }
+        public ActionResult Index()
+        {
+            var movies = _context.Movies.FirstOrDefault(n => n.Name =="Goole ");
+            if(movies == null)
             {
-                Name = "Amazon"
-            };
-            return View (movie);
+                return BadRequest("Van oc cho");
+            }
+            return View(movies);
         }
-        public ActionResult Edit (int id)
-        {
-            return Content ("id="+id);
-        }
-}
+
+        
+
+    }
 }

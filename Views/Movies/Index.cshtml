@@ -1,2 +1,13 @@
 @model Movie
-<h1>@Model.Name </h1>
+@{
+    Movie a = Model;
+}
+
+
+<h1>Bay gio la @DateTime.Now.Hour Gio </h1>
+
+
+
+<ul>
+   <li> day la id so @a.Id</li>
+</ul>
