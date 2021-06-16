@@ -15,34 +15,31 @@ namespace asp.Services
         public IEnumerable<Employee> GetAll()
         {
             return _context.Employees.ToList();
-            throw new System.NotImplementedException();
         }
 
-        public Employee getEmployeetById(int id)
+        public Employee GetEmployeetById(int ID)
         {
-            var employee = _context.Employees.FirstOrDefault(e => e.ID == id);
-            throw new System.NotImplementedException();
+            var employee = _context.Employees.FirstOrDefault(e => e.ID == ID);
+            return employee;
         }
 
         public void Create(Employee employee)
         {
              _context.Employees.Add(employee);
              _context.SaveChanges();
-            throw new System.NotImplementedException();
         }
 
         public void Update(Employee employee)
         {
             _context.Employees.Update(employee);
             _context.SaveChanges();
-            throw new System.NotImplementedException();
         }
 
         public void Delete(int id)
         {
-            var employee = getEmployeetById(id);
+            var employee = GetEmployeetById(id);
             _context.Employees.Remove(employee);
-            throw new System.NotImplementedException();
+            _context.SaveChanges();
         }
 
         public IEnumerable<Employee> Search(string searchString)

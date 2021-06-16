@@ -4,8 +4,10 @@
    IEnumerable<Employee> employees = Model;
 }
 
+<a asp-action="Create" class="btn btn-primary">Create</a>
 
-<table  class="table">
+
+<table class="table">
 
    <thead>
       <tr>
@@ -17,19 +19,26 @@
    </thead>
 
    <tbody>
-     
-         @foreach (var item in employees)
-          
-         {
-            <tr>
+
+      @foreach (var item in employees)
+
+      {
+         <tr>
             <td scope="row">@item.ID</td>
             <td scope="row">@item.Name</td>
 
             <td scope="row">@item.UserName</td>
             <td scope="row">@item.PassWord</td>
-               </tr>
-         }
-       
+            <td> 
+               <a asp-action="Detail" asp-route-Id="@item.ID" class="btn btn-primary">Details</a>
+               <a asp-action="Update" asp-route-Id="@item.ID" class="btn btn-warning">Edit</a>
+               <a asp-action="Delete" asp-route-Id="@item.ID" class="btn btn-danger">Delete</a>
+            </td>
+
+
+         </tr>
+      }
+
 
 
 

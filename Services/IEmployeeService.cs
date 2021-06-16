@@ -7,7 +7,7 @@ namespace asp.Services
 
     {
         IEnumerable<Employee> GetAll();
-        Employee getEmployeetById(int id);
+        Employee GetEmployeetById(int id);
         void Create(Employee employee);
         void Update(Employee employee);
         void Delete(int id);

@@ -1,0 +1,26 @@
+@model Employee
+
+@{
+    ViewData["Title"] = "Detail Employee";
+    var employees = Model;
+
+}
+<div class="container">
+<div class="well well-sm">Detail Employee</div>
+<table class="table">
+
+    <tr class="table-primary">
+        <td>ID</td>
+        <td>Name</td>
+        <td>UserName</td>
+        <td>PassWord</td>
+    </tr>
+    <tr class="table-info">
+        <td>@employees.ID</td>
+        <td>@employees.Name</td>
+        <td>@employees.UserName</td>
+        <td>@employees.PassWord</td>
+    </tr>
+</table>
+</div>
+<a asp-action="Index" class="btn btn-danger">Back to List</a>
