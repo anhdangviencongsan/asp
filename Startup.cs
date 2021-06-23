@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using asp.Services;
 using Asp.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,9 +32,21 @@ namespace asp
         {
              services.AddTransient<IEmployeeService,EmployeeService>();
             services.AddControllersWithViews();
+            
+
 
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DataContext>();
+                // custom password strength
+                services.Configure<IdentityOptions>(option =>
+            {
+                option.Password.RequireDigit = true;
+                option.Password.RequiredLength = 5;
+                option.Password.RequiredUniqueChars = 0;
+                option.Password.RequireUppercase = false;
+                option.Password.RequireNonAlphanumeric = false;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +70,10 @@ namespace asp
             app.UseRouting();
 
             app.UseAuthorization();
+            
+            app.UseAuthentication();
+
+
 
             app.UseEndpoints(endpoints =>
             {

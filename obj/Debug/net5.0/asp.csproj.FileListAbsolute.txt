@@ -81,4 +81,10 @@ D:\c#\asp\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Crypt
 D:\c#\asp\obj\Debug\net5.0\Razor\Views\Employee\Detail.cshtml.g.cs
 D:\c#\asp\obj\Debug\net5.0\Razor\Views\Employee\Create.cshtml.g.cs
 D:\c#\asp\obj\Debug\net5.0\Razor\Views\Employee\Update.cshtml.g.cs
-D:\c#\asp\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
+D:\c#\asp\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\c#\asp\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\c#\asp\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\c#\asp\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+D:\c#\asp\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+D:\c#\asp\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+D:\c#\asp\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
